@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+.env
+npm-debug.log
+bundle.js
+server_bundle.js
+extracted_queries.json
+build
+package-lock.json

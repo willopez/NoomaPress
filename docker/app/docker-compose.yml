@@ -1,0 +1,60 @@
+version: '2.3'
+
+services:
+  example.local:
+    container_name: example.local
+    image: example.local
+    ports:
+      - 80
+    environment:
+      VIRTUAL_HOST: example.local,www.example.local
+      LETSENCRYPT_HOST: example.local,www.example.local
+      LETSENCRYPT_EMAIL: user@example.local
+  admin.example.local:
+    container_name: admin.example.local
+    image: pattonwebz/wordpress-php7-1-apache-memcached
+    ports:
+      - 80
+    environment:
+      WORDPRESS_DB_USER: database
+      WORDPRESS_DB_PASSWORD: dbpass
+      WORDPRESS_DB_NAME: wp_database
+      WORDPRESS_TABLE_PREFIX: wp_
+      WORDPRESS_DB_HOST: db.example.local:3306
+      VIRTUAL_HOST: admin.example.local,www.admin.example.local
+      # VIRTUAL_PROTO: https
+      # LETSENCRYPT_HOST: example.admin.local,www.example.admin.local
+      # LETSENCRYPT_EMAIL: user@example.admin.local
+    volumes:
+      - data_volume:/var/www/html
+      - ./home/wp:/home/
+
+  db.example.local:
+    container_name: db.example.local
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: wp_database
+      MYSQL_USER: database
+      MYSQL_PASSWORD: dbpass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./home/db:/home/db
+
+  wp:
+    container_name: wpcli
+    image: pattonwebz/docker-wpcli
+    volumes_from:
+      - admin.example.local
+    entrypoint: wp
+    command: "--info"
+
+volumes:
+  db_data:
+  data_volume:
+
+networks:
+  default:
+    external:
+      name: public
