@@ -6,6 +6,8 @@ services:
     image: example.local
     ports:
       - 80
+    networks:
+      - backend
     environment:
       VIRTUAL_HOST: example.local,www.example.local
       LETSENCRYPT_HOST: example.local,www.example.local
@@ -15,6 +17,8 @@ services:
     image: pattonwebz/wordpress-php7-1-apache-memcached
     ports:
       - 80
+    networks:
+      - backend
     environment:
       WORDPRESS_DB_USER: database
       WORDPRESS_DB_PASSWORD: dbpass
@@ -32,6 +36,8 @@ services:
   db.example.local:
     container_name: db.example.local
     image: mariadb
+    networks:
+      - backend
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
@@ -45,6 +51,8 @@ services:
   wp:
     container_name: wpcli
     image: pattonwebz/docker-wpcli
+    networks:
+      - backend
     volumes_from:
       - admin.example.local
     entrypoint: wp
@@ -55,6 +63,6 @@ volumes:
   data_volume:
 
 networks:
-  default:
+  backend:
     external:
-      name: public
+      name: backend
