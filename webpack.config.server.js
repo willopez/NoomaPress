@@ -6,7 +6,7 @@ module.exports = {
   bail: !DEV,
   devtool: DEV ? 'cheap-module-source-map' : 'source-map',
   target: 'node',
-  entry: './src/server.js',
+  entry: './src/server/index.js',
   output: {
     path: 'build/server',
     filename: 'bundle.js',

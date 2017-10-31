@@ -1,6 +1,7 @@
 import Express from 'express';
 import path from 'path';
 import proxy from 'http-proxy-middleware';
+import nconf from 'nconf';
 
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -18,27 +19,18 @@ import {
   subscriptionLink,
   requestLink,
   queryOrMutationLink,
-} from './links';
-import HTMLDocument from './components/html-document';
-import Layout from './layouts/Layout';
-import api from './api';
-
-let PORT = 3000,
-  API_HOST = `http://localhost:${PORT}`;
-if (process.env.NODE_ENV === 'production') {
-  (PORT = 80), (API_HOST = 'http://example.local');
-}
-
-if (process.env.PORT) {
-  PORT = parseInt(process.env.PORT, 10);
-}
+} from '../shared/links';
+import config from './config';
+import HTMLDocument from '../components/html-document';
+import Layout from '../layouts/Layout';
+import api from '../api';
 
 const app = new Express();
 
 // Initialize GraphQL API
 api(app);
 
-if (process.env.NODE_ENV === 'production') {
+if (config.get('env') === 'production') {
   // In production we want to serve our JS from a file on the filesystem.
   app.use('/static', Express.static(path.join(process.cwd(), 'build')));
 } else {
@@ -46,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(
     '/static',
     proxy({
-      target: 'http://localhost:3020',
+      target: config.get('webpack_dev_server'),
       pathRewrite: { '^/static/client': '' },
     })
   );
@@ -61,7 +53,7 @@ app.use((req, res) => {
       errorLink,
       queryOrMutationLink({
         fetch,
-        uri: `${API_HOST}/graphql`,
+        uri: config.get('api_uri'),
       }),
     ]),
     cache,
@@ -91,9 +83,11 @@ app.use((req, res) => {
     });
 });
 
-app.listen(PORT, () =>
+app.listen(config.get('port'), () =>
   console.log(
     // eslint-disable-line no-console
-    `App Server is now running on http://localhost:${PORT}`
+    `App Server is now running on http://${config.get('host')}:${config.get(
+      'port'
+    )}`
   )
 );

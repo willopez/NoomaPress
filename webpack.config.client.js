@@ -7,7 +7,7 @@ const DEV = process.env.NODE_ENV !== 'production';
 module.exports = {
   bail: !DEV,
   devtool: DEV ? 'cheap-module-source-map' : 'source-map',
-  entry: './src/client.js',
+  entry: './src/client/index.js',
   output: {
     path: 'build/client',
     filename: 'bundle.js',
@@ -45,7 +45,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(DEV ? 'development' : 'production'),
       },
     }),
-    DEV &&
+    !DEV &&
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           screw_ie8: true, // React doesn't support IE8
@@ -59,6 +59,6 @@ module.exports = {
           screw_ie8: true,
         },
       }),
-    DEV && new webpack.optimize.AggressiveMergingPlugin(),
+    !DEV && new webpack.optimize.AggressiveMergingPlugin(),
   ].filter(Boolean),
 };

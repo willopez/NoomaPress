@@ -1,6 +1,5 @@
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
-import ContactPage from '../pages/ContactPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
 const routes = [
@@ -14,11 +13,6 @@ const routes = [
     path: '/about',
     exact: true,
     component: AboutPage,
-  },
-  {
-    path: '/contact',
-    exact: true,
-    component: ContactPage,
   },
   {
     path: '*',

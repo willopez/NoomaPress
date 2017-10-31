@@ -6,15 +6,15 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloLink } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
+
 import {
   errorLink,
   queryOrMutationLink,
   subscriptionLink,
   requestLink,
-} from './links';
-
-import './style/app.scss';
-import Layout from './layouts/Layout';
+} from '../shared/links';
+import '../style/app.scss';
+import Layout from '../layouts/Layout';
 
 const client = new ApolloClient({
   ssrForceFetchDelay: 100,
@@ -25,7 +25,7 @@ const client = new ApolloClient({
       subscriptionLink: subscriptionLink(),
     }),
   ]),
-  // here we're initializing the cache with the data from the server's cache
+  // Itializing the cache with the data from the server's cache
   cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
 });
 

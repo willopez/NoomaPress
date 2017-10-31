@@ -4,7 +4,8 @@
   "description": "Fron-end framework",
   "main": "index.js",
   "scripts": {
-    "start": "node build/server/bundle.js",
+    "start": "NODE_ENV=production node build/server/bundle.js",
+    "preview": "NODE_ENV=production PORT=4000 node build/server/bundle.js",
     "build": "rm -rf build && npm run gulp && NODE_ENV=production webpack --progress --config webpack.config.server.js && NODE_ENV=production webpack --progress --config webpack.config.client.js",
     "postinstall": "npm run build",
     "dev": "NODE_ENV=development concurrently -c blue,cyan,magenta  \"webpack --watch --config webpack.config.server.js\" \"sleep 3 && nodemon --watch build/server build/server/bundle.js\" \"webpack-dev-server -d --hot --inline --no-info --port 3020 --config webpack.config.client.js\"",
@@ -89,6 +90,7 @@
     "graphql-tools": "^2.6.1",
     "http-proxy-middleware": "^0.17.1",
     "immutability-helper": "^2.1.0",
+    "nconf": "^0.8.5",
     "node-emoji": "^1.3.0",
     "node-fetch": "^1.7.3",
     "persistgraphql": "^0.3.0",
