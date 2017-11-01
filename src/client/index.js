@@ -7,24 +7,13 @@ import { ApolloLink } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 
-import {
-  errorLink,
-  queryOrMutationLink,
-  subscriptionLink,
-  requestLink,
-} from '~/shared/links';
+import { errorLink, queryOrMutationLink } from '~/shared/links';
 import '~/style/app.scss';
 import Layout from '~/layouts/Layout';
 
 const client = new ApolloClient({
   ssrForceFetchDelay: 100,
-  link: ApolloLink.from([
-    errorLink,
-    requestLink({
-      queryOrMutationLink: queryOrMutationLink(),
-      subscriptionLink: subscriptionLink(),
-    }),
-  ]),
+  link: ApolloLink.from([errorLink, queryOrMutationLink()]),
   // Itializing the cache with the data from the server's cache
   cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
 });
