@@ -1,5 +1,16 @@
 {
-  "plugins": ["react-native-web/babel", "transform-class-properties"],
+  "plugins": [
+    "react-native-web/babel",
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ],
   "presets": [
     "stage-2",
     "react-native",

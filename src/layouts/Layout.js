@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 // import ReactGA from 'react-ga';
-import routes from '../routes/index';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import routes from '~/routes/index';
+import Header from '~/components/header';
+import Footer from '~/components/footer';
 
 const ReactGA = process.browser ? require('react-ga') : {};
 

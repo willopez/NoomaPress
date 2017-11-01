@@ -12,9 +12,9 @@ import {
   queryOrMutationLink,
   subscriptionLink,
   requestLink,
-} from '../shared/links';
-import '../style/app.scss';
-import Layout from '../layouts/Layout';
+} from '~/shared/links';
+import '~/style/app.scss';
+import Layout from '~/layouts/Layout';
 
 const client = new ApolloClient({
   ssrForceFetchDelay: 100,

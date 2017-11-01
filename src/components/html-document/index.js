@@ -1,9 +1,9 @@
 /* eslint-disable react/no-danger */
 
 import React from 'react';
-import StylesheetTag from '../stylesheet-tag';
-import appSCSS from '../../style/app.scss';
-import gutenberg from '../../style/gutenberg.css';
+import StylesheetTag from '~/components/stylesheet-tag';
+import appSCSS from '~/style/app.scss';
+import gutenberg from '~/style/gutenberg.css';
 
 const HTMLDocument = ({ content, client: { cache } }) => {
   return (

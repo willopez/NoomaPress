@@ -19,11 +19,11 @@ import {
   subscriptionLink,
   requestLink,
   queryOrMutationLink,
-} from '../shared/links';
+} from '~/shared/links';
 import config from './config';
-import HTMLDocument from '../components/html-document';
-import Layout from '../layouts/Layout';
-import api from '../api';
+import HTMLDocument from '~/components/html-document';
+import Layout from '~/layouts/Layout';
+import api from '~/api';
 
 const app = new Express();
 

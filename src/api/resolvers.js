@@ -1,5 +1,6 @@
-const WPAPI = require('wpapi');
-const wp = new WPAPI({ endpoint: 'http://admin.example.local/wp-json' });
+import WPAPI from 'wpapi';
+import config from '~/server/config';
+const wp = new WPAPI({ endpoint: config.get('wpapi_url') });
 
 const resolvers = {
   Query: {
