@@ -1,6 +1,6 @@
 import WPAPI from 'wpapi';
 import config from '~/server/config';
-const wp = new WPAPI({ endpoint: config.get('wpapi_url') });
+const wp = new WPAPI({ endpoint: config.get('wpapi_uri') });
 
 const resolvers = {
   Query: {

@@ -1,5 +1,5 @@
 {
   "port": 80,
   "host": "example.local",
-  "wpapi_url": "http://admin.example.local/wp-json"
+  "wpapi_uri": "http://admin.example.local/wp-json"
 }
