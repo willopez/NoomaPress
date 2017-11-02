@@ -1,7 +1,7 @@
 {
   "name": "NoomaPress",
   "version": "0.1.0",
-  "description": "Fron-end framework",
+  "description": "A front-end framework",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node build/server/bundle.js",
@@ -27,14 +27,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/willlopez/NoomaPress.git"
+    "url": "https://github.com/willopez/NoomaPress"
   },
   "author": "Will Lopez",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/willlopez/NoomaPress.git/issues"
+    "url": "https://github.com/willopez/NoomaPress/issues"
   },
-  "homepage": "https://bitbucket.org/willopez/NoomaPress#readme",
+  "homepage": "https://github.com/willopez/NoomaPress",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-cli": "^6.8.0",
