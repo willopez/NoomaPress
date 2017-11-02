@@ -14,7 +14,7 @@ services:
       LETSENCRYPT_EMAIL: user@example.local
   admin.example.local:
     container_name: admin.example.local
-    image: pattonwebz/wordpress-php7-1-apache-memcached
+    image: wordpress:4.8.3-php7.1-apache
     ports:
       - 80
     networks:
