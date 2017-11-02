@@ -1,8 +1,5 @@
 query PageContent($slug: String!) {
   pageContent(slug: $slug) {
-    id
-    title
-    slug
     content
   }
 }

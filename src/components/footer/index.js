@@ -5,7 +5,7 @@ const date = new Date();
 export default () => (
   <footer className="mastfoot">
     <div className="inner">
-      <p>Copyright &copy; {date.getFullYear()} Company</p>
+      <p>Copyright &copy; {date.getFullYear()} NoomaPress</p>
     </div>
   </footer>
 );

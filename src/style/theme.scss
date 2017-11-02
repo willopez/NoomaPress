@@ -1,6 +1,6 @@
 /* theme.scss  */
 
-/* Gutenberg styles and overrides */
+/* START Gutenberg styles and overrides START*/
 .alignright {
   display: inline;
   float: right;
@@ -21,8 +21,12 @@
 }
 
 .wp-block-cover-image {
+  @extend .full-width;
   height: 200px;
+  margin-bottom: 1rem;
 }
+
+/* END Gutenberg style overrides END */
 
 /* Main structure */
 html,
@@ -193,7 +197,7 @@ li {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 70rem;
+    width: 65rem;
   }
 
   .full-width {

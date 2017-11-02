@@ -17,7 +17,7 @@ export default class NavBar extends Component {
     return (
       <Navbar toggleable className="navbar navbar-light navbar-expand-md">
         <NavbarBrand className="masthead-brand" href="/">
-          Project
+          NoomaPress
         </NavbarBrand>
         <NavbarToggler right onClick={this.toggleNavbar} />
         <Collapse
