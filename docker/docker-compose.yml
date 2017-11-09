@@ -2,6 +2,8 @@ version: '2.3'
 
 services:
   example.local:
+    depends_on:
+      - admin.example.local 
     container_name: example.local
     image: example.local
     ports:
@@ -10,57 +12,41 @@ services:
       - backend
     environment:
       VIRTUAL_HOST: example.local,www.example.local
-      LETSENCRYPT_HOST: example.local,www.example.local
-      LETSENCRYPT_EMAIL: user@example.local
+      # LETSENCRYPT_HOST: example.local,www.example.local
+      # LETSENCRYPT_EMAIL: user@example.local
   admin.example.local:
+    depends_on:
+      - db.example.local
     container_name: admin.example.local
-    image: wordpress:4.8.3-php7.1-apache
+    image: willopez/wordpress:0.2.0
     ports:
       - 80
     networks:
       - backend
+    env_file: ./wordpress/.env
     environment:
-      WORDPRESS_DB_USER: database
-      WORDPRESS_DB_PASSWORD: dbpass
-      WORDPRESS_DB_NAME: wp_database
-      WORDPRESS_TABLE_PREFIX: wp_
-      WORDPRESS_DB_HOST: db.example.local:3306
       VIRTUAL_HOST: admin.example.local,www.admin.example.local
-      # VIRTUAL_PROTO: https
       # LETSENCRYPT_HOST: example.admin.local,www.example.admin.local
       # LETSENCRYPT_EMAIL: user@example.admin.local
     volumes:
-      - data_volume:/var/www/html
-      - ./home/wp:/home/
+      - ./wordpress/wp-content:/var/www/wp-content
 
   db.example.local:
     container_name: db.example.local
-    image: mariadb
+    image: mariadb:10.3
     networks:
       - backend
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-      MYSQL_DATABASE: wp_database
-      MYSQL_USER: database
-      MYSQL_PASSWORD: dbpass
+      MYSQL_DATABASE: wp
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp
     volumes:
       - db_data:/var/lib/mysql
-      - ./home/db:/home/db
-
-  wp:
-    container_name: wpcli
-    image: pattonwebz/docker-wpcli
-    networks:
-      - backend
-    volumes_from:
-      - admin.example.local
-    entrypoint: wp
-    command: "--info"
 
 volumes:
   db_data:
-  data_volume:
 
 networks:
   backend:

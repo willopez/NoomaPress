@@ -7,3 +7,8 @@ server_bundle.js
 extracted_queries.json
 build
 package-lock.json
+docker/wordpress/wp-content/uploads
+docker/wordpress/wp-content/plugins
+docker/wordpress/wp-content/themes
+
+
