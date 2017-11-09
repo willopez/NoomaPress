@@ -23,9 +23,14 @@ services:
       - 80
     networks:
       - backend
-    env_file: ./wordpress/.env
     environment:
       VIRTUAL_HOST: admin.example.local,www.admin.example.local
+      DB_NAME: wp
+      DB_USER: wp
+      DB_PASSWORD: wp
+      DB_HOST: db.example.local
+      WP_DEBUG: "true"
+      FS_METHOD: direct
       # LETSENCRYPT_HOST: example.admin.local,www.example.admin.local
       # LETSENCRYPT_EMAIL: user@example.admin.local
     volumes:
