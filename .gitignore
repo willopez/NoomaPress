@@ -15,4 +15,3 @@ docker/wordpress/wp-content/plugins/*
 docker/wordpress/wp-content/themes/*
 !docker/wordpress/wp-content/themes/my-theme
 
-
