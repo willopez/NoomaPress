@@ -5,7 +5,7 @@ services:
     depends_on:
       - admin.example.local 
     container_name: example.local
-    image: example.local
+    image: example.local:0.1.0
     ports:
       - 80
     networks:
