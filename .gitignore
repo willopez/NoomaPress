@@ -10,7 +10,7 @@ package-lock.json
 docker/wordpress/wp-content/uploads
 
 docker/wordpress/wp-content/plugins/*
-!docker/wordpress/wp-content/plugins/my-plugin
+!docker/wordpress/wp-content/plugins/wlcms-settings
 
 docker/wordpress/wp-content/themes/*
 !docker/wordpress/wp-content/themes/my-theme
