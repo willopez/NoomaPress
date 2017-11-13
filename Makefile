@@ -1,7 +1,7 @@
 -include env_make
 
 NODE_ALPINE_VER ?= 8.7-alpine
-TAG ?= node-$(NODE_ALPINE_VER)
+TAG ?= latest
 
 REPO = example.local
 
