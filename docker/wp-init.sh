@@ -7,6 +7,7 @@ docker exec admin.example.local wp --path=/usr/src/wordpress core install --url=
 # Install plugins and themes
 docker exec admin.example.local wp --path=/usr/src/wordpress plugin install gutenberg --activate
 docker exec admin.example.local wp --path=/usr/src/wordpress plugin install disable-blogging --activate
+docker exec admin.example.local wp --path=/usr/src/wordpress plugin install white-label-cms --activate
 docker exec admin.example.local wp --path=/usr/src/wordpress plugin install https://github.com/willopez/fancy-admin-ui/archive/master.zip --activate --force
 docker exec admin.example.local wp --path=/usr/src/wordpress theme install twentyseventeen --activate
 
