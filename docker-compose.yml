@@ -18,9 +18,9 @@ services:
     depends_on:
       - db.example.local
     container_name: admin.example.local
-    image: willopez/wordpress:4.8.3-nginx-1.12
+    image: admin.example.local:0.1.0
     volumes:
-      - ./wordpress/wp-content:/var/www/wp-content
+      - wp-data:/var/www/wp-content
     ports:
       - 80
     networks:
@@ -54,6 +54,7 @@ services:
 
 volumes:
   db_data:
+  wp-data:
 
 networks:
   backend:

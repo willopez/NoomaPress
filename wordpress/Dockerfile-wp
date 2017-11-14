@@ -1,0 +1,1 @@
+FROM willopez/wordpress:4.8.3-nginx-1.12
