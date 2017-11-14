@@ -55,11 +55,16 @@ li {
 }
 
 ul.navbar-nav li a {
-  &,
+    color: #40464d;
+}
+
+ul.navbar-nav li a {
   &:focus,
   &:hover {
     text-decoration: none;
-    color: #40464d;
+    border-bottom: solid 2px #333;
+    display: inline;
+    padding-bottom: 3px;
   }
 
 }
