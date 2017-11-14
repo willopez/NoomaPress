@@ -18,7 +18,9 @@ services:
     depends_on:
       - db.example.local
     container_name: admin.example.local
-    image: willopez/wordpress:0.2.0
+    image: willopez/wordpress:4.8.3-nginx-1.12
+    volumes:
+      - ./wordpress/wp-content:/var/www/wp-content
     ports:
       - 80
     networks:
@@ -31,10 +33,10 @@ services:
       DB_HOST: db.example.local
       WP_DEBUG: "true"
       FS_METHOD: direct
+      WP_REDIS_HOST: wp-redis
+      WP_CACHE_KEY_SALT: admin.example.local
       # LETSENCRYPT_HOST: example.admin.local,www.example.admin.local
       # LETSENCRYPT_EMAIL: user@example.admin.local
-    volumes:
-      - ./wordpress/wp-content:/var/www/wp-content
 
   db.example.local:
     container_name: db.example.local
