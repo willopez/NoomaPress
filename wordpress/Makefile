@@ -1,6 +1,6 @@
 -include env_make
 
-TAG ?= 0.1.0
+TAG ?= latest
 
 REPO = admin.example.local
 

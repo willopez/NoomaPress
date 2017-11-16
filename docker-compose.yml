@@ -5,7 +5,7 @@ services:
     depends_on:
       - admin.example.local 
     container_name: example.local
-    image: example.local:0.1.0
+    image: example.local
     ports:
       - 80
     networks:
@@ -18,7 +18,7 @@ services:
     depends_on:
       - db.example.local
     container_name: admin.example.local
-    image: admin.example.local:0.1.0
+    image: admin.example.local
     volumes:
       - wp-data:/var/www/wp-content
     ports:
