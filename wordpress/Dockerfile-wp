@@ -1,1 +1,1 @@
-FROM willopez/wordpress:4.8.3-nginx-1.12
+FROM willopez/wordpress:4.9-nginx-1.12
