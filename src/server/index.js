@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime.js';
 import Express from 'express';
 import path from 'path';
 import proxy from 'http-proxy-middleware';

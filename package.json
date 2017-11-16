@@ -106,6 +106,7 @@
     "react-timeago": "^3.0.0",
     "react-transition-group": "^1.1.2",
     "reactstrap": "^4.8.0",
+    "regenerator-runtime": "^0.11.0",
     "subscriptions-transport-ws": "^0.7.0",
     "wpapi": "^1.1.2"
   }

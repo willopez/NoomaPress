@@ -4,23 +4,22 @@ const wp = new WPAPI({ endpoint: config.get('wpapi_uri') });
 
 const resolvers = {
   Query: {
-    pageContent: (_, args) => {
-      return wp
-        .pages()
-        .slug(args.slug)
-        .then(data => {
-          const page = data[0];
+    pageContent: async (_, args) => {
+      let response = null;
 
-          return {
-            id: page.id,
-            title: page.title.rendered,
-            slug: page.slug,
-            content: page.content.rendered,
-          };
-        })
-        .catch(err => {
-          // Handle errrors
-        });
+      try {
+        response = await wp.pages().slug(args.slug);
+      } catch (error) {
+        console.log('API ERROR: ', error);
+      }
+
+      response = response[0];
+
+      return {
+        id: response.id,
+        title: response.title,
+        content: response.content.rendered,
+      };
     },
   },
 };
