@@ -1,5 +1,6 @@
 import HomePage from '~/pages/HomePage';
 import AboutPage from '~/pages/AboutPage';
+import DynamicPage from '~/pages/DynamicPage';
 import NotFoundPage from '~/pages/NotFoundPage';
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
     path: '/about',
     exact: true,
     component: AboutPage,
+  },
+  {
+    path: '/:slug',
+    exact: true,
+    component: DynamicPage,
   },
   {
     path: '*',
