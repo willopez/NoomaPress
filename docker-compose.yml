@@ -20,7 +20,7 @@ services:
     container_name: admin.example.local
     image: admin.example.local
     volumes:
-      - wp-data:/var/www/wp-content
+      - wp_data:/var/www/wp-content
     ports:
       - 80
     networks:
@@ -54,7 +54,7 @@ services:
 
 volumes:
   db_data:
-  wp-data:
+  wp_data:
 
 networks:
   backend:
