@@ -3,16 +3,20 @@ const sass = require('gulp-sass');
 const minifyCSS = require('gulp-csso');
 const concat = require('gulp-concat');
 
-gulp.task('app', () =>
+gulp.task('css', () =>
   gulp
-    .src('./src/style/app.scss')
+    .src('./src/static/styles/app.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./build/client/css'))
+    .pipe(gulp.dest('./build/css'))
 );
 
-gulp.task('gutenberg', () =>
-  gulp.src('./src/style/gutenberg.css').pipe(gulp.dest('./build/client/css'))
+gulp.task('images', () =>
+  gulp.src('./src/static/images/**/*').pipe(gulp.dest('./build/images'))
 );
 
-gulp.task('default', ['app', 'gutenberg']);
+gulp.task('gutenberg_styles', () =>
+  gulp.src('./src/static/styles/gutenberg.css').pipe(gulp.dest('./build/css'))
+);
+
+gulp.task('default', ['css', 'images', 'gutenberg_styles']);

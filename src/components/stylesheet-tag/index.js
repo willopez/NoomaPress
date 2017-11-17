@@ -10,7 +10,7 @@ const StylesheetTag = props => {
     return element;
   }
 
-  const link = `static/client/css/${props.prod_styles}.css`;
+  const link = `static/css/${props.prod_styles}.css`;
 
   return <link rel="stylesheet" href={link} />;
 };

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import StylesheetTag from '~/components/stylesheet-tag';
-import appSCSS from '~/style/app.scss';
-import gutenberg from '~/style/gutenberg.css';
+import appSCSS from '~/static/styles/app.scss';
+import gutenberg from '~/static/styles/gutenberg.css';
+import AppIcons from '~/components/app-icons';
 
 const HTMLDocument = ({ content, client: { cache } }) => {
   return (
@@ -13,6 +14,7 @@ const HTMLDocument = ({ content, client: { cache } }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <StylesheetTag prod_styles="gutenberg" dev_styles={gutenberg} />
         <StylesheetTag prod_styles="app" dev_styles={appSCSS} />
+        <AppIcons />
         <title>NoomaPress</title>
       </head>
       <body>
