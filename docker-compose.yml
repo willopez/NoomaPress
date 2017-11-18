@@ -6,6 +6,7 @@ services:
       - admin.example.local 
     container_name: example.local
     image: example.local
+    restart: unless-stopped
     ports:
       - 80
     networks:
@@ -19,6 +20,7 @@ services:
       - db.example.local
     container_name: admin.example.local
     image: admin.example.local
+    restart: unless-stopped
     volumes:
       - wp_data:/var/www/wp-content
     ports:
@@ -41,6 +43,7 @@ services:
   db.example.local:
     container_name: db.example.local
     image: mariadb:10.3
+    restart: unless-stopped
     networks:
       - backend
     environment:
