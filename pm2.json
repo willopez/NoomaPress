@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "NoomaPress",
+      "script": "build/server/bundle.js",
+      "env": {
+        "production": true
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-ARG NODE_ALPINE_VER
+ARG NODE_VER
 
-FROM node:${NODE_ALPINE_VER}
+FROM keymetrics/pm2:${NODE_VER}
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -9,12 +9,10 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install dependencies
-COPY package.json package-lock.json ./
-
 RUN npm install
 RUN npm run build
 
 # Expose bound port
 EXPOSE 80
 
-CMD [ "npm", "start" ]
+CMD [ "pm2-docker", "start", "pm2.json" ]
