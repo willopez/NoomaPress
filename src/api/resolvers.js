@@ -9,8 +9,17 @@ const resolvers = {
 
       try {
         response = await wp.pages().slug(args.slug);
+
+        // Attempt to lookup a post, if no page was found.
+        if (!response.length) {
+          response = await wp.posts().slug(args.slug);
+        }
       } catch (error) {
         console.log('API ERROR: ', error);
+      }
+
+      if (!response) {
+        return {};
       }
 
       response = response[0];
