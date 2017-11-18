@@ -6,6 +6,7 @@ import nconf from 'nconf';
 
 import React from 'react';
 import ReactDOM from 'react-dom/server';
+import { Helmet } from 'react-helmet';
 import { StaticRouter } from 'react-router';
 
 import ApolloClient from 'apollo-client';
@@ -72,8 +73,11 @@ app.use((req, res) => {
 
   renderToStringWithData(component)
     .then(content => {
+      const helmet = Helmet.renderStatic();
       res.status(200);
-      const html = <HTMLDocument content={content} client={client} />;
+      const html = (
+        <HTMLDocument content={content} helmet={helmet} client={client} />
+      );
       res.send(`<!doctype html>\n${ReactDOM.renderToString(html)}`);
       res.end();
     })

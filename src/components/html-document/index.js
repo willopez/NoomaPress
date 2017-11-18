@@ -6,16 +6,16 @@ import appSCSS from '~/static/styles/app.scss';
 import gutenberg from '~/static/styles/gutenberg.css';
 import AppIcons from '~/components/app-icons';
 
-const HTMLDocument = ({ content, client: { cache } }) => {
+const HTMLDocument = ({ content, helmet, client: { cache } }) => {
   return (
-    <html lang="en">
+    <html lang="en" {...helmet.htmlAttributes.toComponent()}>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {helmet.meta.toComponent()}
+        {helmet.title.toComponent()}
+        {helmet.link.toComponent()}
         <StylesheetTag prod_styles="gutenberg" dev_styles={gutenberg} />
         <StylesheetTag prod_styles="app" dev_styles={appSCSS} />
         <AppIcons />
-        <title>NoomaPress</title>
       </head>
       <body>
         <div id="content" dangerouslySetInnerHTML={{ __html: content }} />

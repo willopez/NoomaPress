@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { graphql } from 'react-apollo';
 import { withRouter } from 'react-router';
 
@@ -11,6 +12,7 @@ class DynamicPage extends Component {
     const { pageContent } = this.props.data;
     return (
       <div>
+        <Helmet title={pageContent.title} />
         <PageContent {...pageContent} />
       </div>
     );

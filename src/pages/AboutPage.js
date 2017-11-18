@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { graphql } from 'react-apollo';
 
 import PageContent from '~/components/page-content';
@@ -10,6 +11,7 @@ class AboutPage extends Component {
     const { pageContent } = this.props.data;
     return (
       <div>
+        <Helmet title="About" />
         <PageContent {...pageContent} />
       </div>
     );

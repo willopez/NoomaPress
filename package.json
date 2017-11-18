@@ -100,6 +100,7 @@
     "react-apollo": "^2.0.0",
     "react-dom": "^16.1.0",
     "react-ga": "^2.1.0",
+    "react-helmet": "^5.2.0",
     "react-native-web": "^0.1.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
