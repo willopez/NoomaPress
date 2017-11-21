@@ -48,6 +48,7 @@
     "babel-preset-stage-2": "^6.5.0",
     "babel-register": "^6.9.0",
     "concurrently": "^3.0.0",
+    "copy-webpack-plugin": "^4.2.1",
     "css-loader": "^0.26.1",
     "eslint": "^3.8.1",
     "eslint-config-prettier": "^2.6.0",

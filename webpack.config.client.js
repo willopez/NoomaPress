@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
@@ -45,6 +46,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(DEV ? 'development' : 'production'),
       },
     }),
+    DEV && new CopyWebpackPlugin([{ from: 'src/static', to: 'static' }]),
     !DEV &&
       new webpack.optimize.UglifyJsPlugin({
         compress: {
