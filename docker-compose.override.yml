@@ -3,11 +3,9 @@ version: '2.3'
 
 services:
   example.com:
-    container_name: example.local
     environment:
       VIRTUAL_HOST: example.local
   admin.example.com:
-    container_name: admin.example.local
     environment:
       VIRTUAL_HOST: admin.example.local
       DB_NAME: wp

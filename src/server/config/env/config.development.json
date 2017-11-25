@@ -1,6 +1,6 @@
 {
   "port": 3000,
   "host": "localhost",
-  "wpapi_uri": "http://admin.example.local/wp-json",
+  "wpapi_uri": "http://admin.example.com/wp-json",
   "webpack_dev_server": "http://localhost:3020"
 }
