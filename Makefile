@@ -3,7 +3,7 @@
 NODE_VER ?= 8
 TAG ?= latest
 
-REPO = example.local
+REPO = example.com
 
 .PHONY: build push release
 

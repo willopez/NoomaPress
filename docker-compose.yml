@@ -1,65 +1,53 @@
 version: '2.3'
 
 services:
-  example.local:
+  example.com:
     depends_on:
-      - admin.example.local 
-    container_name: example.local
-    image: example.local
+      - admin.example.com
+    container_name: example.com
+    image: example.com
     restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: example.com
     ports:
       - 80
     networks:
-      - backend
-    environment:
-      VIRTUAL_HOST: example.local,www.example.local
-      # LETSENCRYPT_HOST: example.local,www.example.local
-      # LETSENCRYPT_EMAIL: user@example.local
-  admin.example.local:
+      - proxy
+      - internal
+
+  admin.example.com:
     depends_on:
-      - db.example.local
-    container_name: admin.example.local
-    image: admin.example.local
+      - db.example.com
+    container_name: admin.example.com
+    image: admin.example.com
     restart: unless-stopped
     volumes:
       - wp_data:/var/www/wp-content
+    environment:
+      VIRTUAL_HOST: admin.example.com
+      FS_METHOD: direct
+      DB_HOST: db.example.com
     ports:
       - 80
     networks:
-      - backend
-    environment:
-      VIRTUAL_HOST: admin.example.local,www.admin.example.local
-      DB_NAME: wp
-      DB_USER: wp
-      DB_PASSWORD: wp
-      DB_HOST: db.example.local
-      WP_DEBUG: "true"
-      FS_METHOD: direct
-      WP_REDIS_HOST: wp-redis
-      WP_CACHE_KEY_SALT: admin.example.local
-      # LETSENCRYPT_HOST: example.admin.local,www.example.admin.local
-      # LETSENCRYPT_EMAIL: user@example.admin.local
+      - proxy
+      - internal
 
-  db.example.local:
-    container_name: db.example.local
+  db.example.com:
+    container_name: db.example.com
     image: mariadb:10.3
     restart: unless-stopped
-    networks:
-      - backend
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-      MYSQL_DATABASE: wp
-      MYSQL_USER: wp
-      MYSQL_PASSWORD: wp
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - internal
 
 volumes:
-  db_data:
   wp_data:
+  db_data:
 
 networks:
-  backend:
-    external:
-      name: backend
+  proxy:
+    external: true
+  internal:
+    external: true

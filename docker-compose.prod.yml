@@ -1,0 +1,24 @@
+# SET PRODUCTION VALUES
+version: '2.3'
+
+services:
+  example.com:
+    environment:
+      LETSENCRYPT_HOST: example.com,www.example.com
+      LETSENCRYPT_EMAIL: user@example.com
+  admin.example.com:
+    environment:
+      DB_NAME: prod_wp
+      DB_USER: prod_wp
+      DB_PASSWORD: prod_wp
+      WP_REDIS_HOST: wp-redis
+      WP_CACHE_KEY_SALT: admin.example.com
+      LETSENCRYPT_HOST: example.admin.com
+      LETSENCRYPT_EMAIL: user@admin.example.com
+  db.example.com:
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: prod_wp
+      MYSQL_USER: prod_wp
+      MYSQL_PASSWORD: prod_wp

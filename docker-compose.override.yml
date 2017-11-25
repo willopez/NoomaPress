@@ -1,0 +1,23 @@
+# Development environment overrides
+version: '2.3'
+
+services:
+  example.com:
+    container_name: example.local
+    environment:
+      VIRTUAL_HOST: example.local
+  admin.example.com:
+    container_name: admin.example.local
+    environment:
+      VIRTUAL_HOST: admin.example.local
+      DB_NAME: wp
+      DB_USER: wp
+      DB_PASSWORD: wp
+      WP_DEBUG: "true"
+  db.example.com:
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: wp
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp

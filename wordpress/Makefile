@@ -2,7 +2,7 @@
 
 TAG ?= latest
 
-REPO = admin.example.local
+REPO = admin.example.com
 
 .PHONY: build push release
 
