@@ -1,15 +1,10 @@
 #!/bin/bash
-
 SITEURL="admin.example.local"
 getopts e: option
-
 
 if [ "${OPTARG}" == "prod" ]; then 
   SITEURL="admin.example.com"
 fi
-
-echo $SITEURL
-
 
 # Perform WordPress installation
 docker exec admin.example.com wp --path=/usr/src/wordpress db reset --yes
