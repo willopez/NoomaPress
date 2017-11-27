@@ -15,7 +15,7 @@ docker exec admin.example.com wp --path=/usr/src/wordpress post create --post_ty
 docker exec admin.example.com wp --path=/usr/src/wordpress post create --post_type=page --post_title='About' --post_name='about' --post_content='About...' --post_status='publish'
 
 # Install plugins and themes
-docker exec admin.example.com wp --path=/usr/src/wordpress plugin install gutenberg wp-stateless disable-blogging white-label-cms redis-cache https://github.com/willopez/fancy-admin-ui/archive/master.zip --activate --force
+docker exec admin.example.com wp --path=/usr/src/wordpress plugin install gutenberg wp-stateless redirection disable-blogging white-label-cms redis-cache https://github.com/willopez/fancy-admin-ui/archive/master.zip --activate --force
 docker exec admin.example.com wp --path=/usr/src/wordpress theme install twentyseventeen --activate
 
 # Delete unnecessary plugins and themes

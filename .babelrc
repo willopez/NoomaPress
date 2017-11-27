@@ -13,6 +13,7 @@
   ],
   "presets": [
     "stage-2",
+    "react",
     "react-native",
     [
       "env",
