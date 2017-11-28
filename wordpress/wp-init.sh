@@ -1,14 +1,14 @@
 #!/bin/bash
-SITEURL="admin.example.local"
+SITEURL="http://admin.example.local"
 getopts e: option
 
 if [ "${OPTARG}" == "prod" ]; then 
-  SITEURL="admin.example.com"
+  SITEURL="https://admin.example.com"
 fi
 
 # Perform WordPress installation
 docker exec admin.example.com wp --path=/usr/src/wordpress db reset --yes
-docker exec admin.example.com wp --path=/usr/src/wordpress core install --url=http://${SITEURL} --title="Example Admin" --admin_user=admin --admin_password=admin --admin_email=example@example.com
+docker exec admin.example.com wp --path=/usr/src/wordpress core install --url=${SITEURL} --title="Example Admin" --admin_user=admin --admin_password=admin --admin_email=example@example.com
 
 # Create default pages
 docker exec admin.example.com wp --path=/usr/src/wordpress post create --post_type=page --post_title='Home' --post_name='home' --post_content='Welcome to NoomaPress' --post_status='publish'
