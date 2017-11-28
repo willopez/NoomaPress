@@ -62,7 +62,7 @@ ul.navbar-nav li a {
   &:focus,
   &:hover {
     text-decoration: none;
-    border-bottom: solid 3px #00a0d2;
+    border-bottom: solid 1px #00a0d2;
     display: inline;
     padding-bottom: 3px;
   }
@@ -70,7 +70,7 @@ ul.navbar-nav li a {
 }
 
 ul.navbar-nav li.active a {
-  border-bottom: solid 3px #00a0d2;
+  border-bottom: solid 1px #00a0d2;
   display: inline;
   padding-bottom: 3px;
 }
@@ -112,6 +112,19 @@ ul.navbar-nav li.active a {
 
 .masthead-brand {
   margin-bottom: 0;
+}
+
+/**
+ * Navigation
+ */
+
+button.navbar-toggler {
+  border: none;
+  outline: none !important;
+}
+
+ul.navbar-nav li {
+  margin-top: 20px;
 }
 
 .nav-masthead .nav-link {
@@ -161,10 +174,6 @@ ul.navbar-nav li.active a {
   padding: 0.75rem 1.25rem;
   font-weight: bold;
 }
-
-/*
- * Positioning
- */
 
 /*
  * Footer

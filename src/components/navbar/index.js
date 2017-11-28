@@ -8,9 +8,17 @@ export default class NavBar extends Component {
   };
 
   toggleNavbar = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    var w = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+
+    // Only trigger toggle on small devices
+    if (w <= 768) {
+      this.setState({
+        isOpen: !this.state.isOpen,
+      });
+    }
   };
 
   render() {
@@ -26,8 +34,12 @@ export default class NavBar extends Component {
           navbar
         >
           <Nav navbar className="nav-masthead">
-            <NavbarLink title="HOME" href="/" />
-            <NavbarLink title="ABOUT" href="/about" />
+            <NavbarLink onClick={this.toggleNavbar} title="HOME" href="/" />
+            <NavbarLink
+              onClick={this.toggleNavbar}
+              title="ABOUT"
+              href="/about"
+            />
           </Nav>
         </Collapse>
       </Navbar>

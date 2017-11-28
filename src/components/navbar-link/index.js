@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-const NavbarLink = ({ title, href, location }) => {
+const NavbarLink = ({ title, href, location, onClick }) => {
   const isActive = location.pathname === href;
 
   return (
     <li className={isActive ? 'active' : ''}>
-      <NavLink to={href}>{title}</NavLink>
+      <NavLink onClick={onClick} to={href}>
+        {title}
+      </NavLink>
     </li>
   );
 };
