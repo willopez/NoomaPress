@@ -9,11 +9,11 @@ import PAGE_CONTENT_QUERY from '~/graphql/PageContentQuery.graphql';
 
 class DynamicPage extends Component {
   render() {
-    const { pageContent } = this.props.data;
+    const { page } = this.props.data;
     return (
       <div>
-        <Helmet title={pageContent.title} />
-        <PageContent {...pageContent} />
+        <Helmet title={page.title} />
+        <PageContent {...page} />
       </div>
     );
   }

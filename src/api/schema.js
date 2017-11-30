@@ -12,9 +12,7 @@ type Post {
 }
 
 type Page {
-  id: ID!
   title: String
-  slug: String
   content: String
 }
 
@@ -27,7 +25,7 @@ type Comment {
 type Query {
   posts: [Post]
   post(id: ID!): Post
-  pageContent(slug: String!): Page
+  page(slug: String!): Page
 }
 
 input PostInput {

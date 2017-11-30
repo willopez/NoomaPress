@@ -5,9 +5,11 @@ import { getMainDefinition } from 'apollo-utilities';
 
 export const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
-    graphQLErrors.map(({ message, locations, path }) =>
+    graphQLErrors.map(({ message, location, path }) =>
       console.log(
-        `[GraphQL error]: Message: ${message}, Location: ${location}, Path: ${path}`
+        `[GraphQL error]: Message: ${message}, Location: ${location}, Path: ${
+          path
+        }`
       )
     );
   if (networkError) console.log(`[Network error]: ${networkError}`);

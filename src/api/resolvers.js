@@ -4,7 +4,7 @@ const wp = new WPAPI({ endpoint: config.get('wpapi_uri') });
 
 const resolvers = {
   Query: {
-    pageContent: async (_, args) => {
+    page: async (_, args) => {
       let response = null;
 
       try {
@@ -25,8 +25,7 @@ const resolvers = {
       response = response[0];
 
       return {
-        id: response.id,
-        title: response.title,
+        title: response.title.rendered,
         content: response.content.rendered,
       };
     },

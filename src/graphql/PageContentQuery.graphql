@@ -1,5 +1,6 @@
-query PageContent($slug: String!) {
-  pageContent(slug: $slug) {
+query Page($slug: String!) {
+  page(slug: $slug) {
+    title
     content
   }
 }
