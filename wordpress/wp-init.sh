@@ -23,7 +23,7 @@ docker exec admin.example.com wp --path=/usr/src/wordpress plugin delete hello a
 docker exec admin.example.com wp --path=/usr/src/wordpress theme delete twentyfifteen twentysixteen
 
 # Set url structure
-docker exec admin.example.com wp --path=/usr/src/wordpress rewrite structure '/%postname%/' --hard
+docker exec admin.example.com wp --path=/usr/src/wordpress rewrite structure '/%postname%' --hard
 
 # Fix permissions
 docker exec admin.example.com chown -R nobody.nobody /var/www/wp-content
