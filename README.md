@@ -11,7 +11,6 @@ A framework for building moderm WordPress interfaces. Traditional WordPress them
 [![Reactstrap](/img/reactstrap.png)](http://reactstrap.github.io/)
 [![Docker](/img/docker.png)](https://docker.com)
 [![Webpack](/img/webpack.png)](https://webpack.github.io/)
-[![ESLint](/img/eslint.png)](http://eslint.org/)
 
 # Requirements
 * Node 8+
