@@ -18,16 +18,16 @@ A framework for building moderm WordPress interfaces. Traditional WordPress them
 * Docker Compose
 
 # Getting Started
-### Install dependencies
+Install dependencies
 ```
 npm install
 ```
-### The following commands will build the necessary containers to run the project. There will be three containers in total:
+The following commands will build the necessary containers to run the project. There will be three containers in total:
 1. UI Container - node based app to build the interface
 2. WordPress Admin Container - WordPress admin interface
 3. WordPress Database Container - Database
 
-### Build containers
+Build containers
 ```
 # at project root
 make
@@ -37,17 +37,17 @@ make
 ./wordpres/make
 ```
 
-### Stand up all containers
+Stand up all containers
 ```
 docker-compose up
 ```
-### Initialize WordPress
+Initialize WordPress
 ```
 # inside the wordpress directory
 bash wp-init.sh
 ```
 
-### Start project
+Start project
 ```
 npm run dev
 ```
@@ -73,6 +73,7 @@ UI can be reached at ```localhost:3000```
 # Demo
 
 # Running in Production
+Build and run project
 ```
 npm run build
 ```
@@ -80,7 +81,7 @@ npm run build
 npm start
 ```
 
-### Build containers
+Build containers
 ```
 # at project root
 make
@@ -92,7 +93,7 @@ make
 docker-compose -f docker-compose.yuml -f docker-compose.prod.yml up
 ```
 
-### Initialize WordPress
+Initialize WordPress
 ```
 # inside the wordpress directory
 bash wp-init.sh -e prod
@@ -100,6 +101,7 @@ bash wp-init.sh -e prod
 
 # Docker and Docker Compose Integration
 ### Docker
+
 Docker images are built using two different Dockerfiles.
 
 ```Dockerfile``` - builds the image for the UI
