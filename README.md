@@ -90,7 +90,7 @@ make
 ./wordpres/make
 ```
 ```
-docker-compose -f docker-compose.yuml -f docker-compose.prod.yml up
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
 ```
 
 Initialize WordPress
