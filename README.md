@@ -74,7 +74,7 @@ UI can be reached at ```localhost:3000```
 
 [Interface](http://demo.willopez.com)
 
-[WordPress Admin](http://admin.demo.willopez.com)
+[WordPress Admin](https://admindemo.willopez.com)
 
 User: editor
 
