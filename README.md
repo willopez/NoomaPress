@@ -72,6 +72,14 @@ UI can be reached at ```localhost:3000```
 ```
 # Demo
 
+[Interface](http://demo.willopez.com)
+
+[WordPress Admin](http://admin.demo.willopez.com)
+
+User: editor
+
+Password: password
+
 # Running in Production
 Build and run project
 ```
