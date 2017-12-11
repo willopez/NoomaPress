@@ -27,3 +27,13 @@ hydrate(
   </ApolloProvider>,
   document.getElementById('content')
 );
+
+if (module.hot) {
+  module.hot.accept();
+
+  module.hot.accept('./index.js', () => {
+    try {
+      console.log('Updating front-end');
+    } catch (err) {}
+  });
+}

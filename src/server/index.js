@@ -96,3 +96,13 @@ app.listen(config.get('port'), () =>
     )}`
   )
 );
+
+if (module.hot) {
+  module.hot.accept();
+
+  module.hot.accept('./index.js', () => {
+    try {
+      console.log('Updating server');
+    } catch (err) {}
+  });
+}

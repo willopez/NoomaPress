@@ -10,7 +10,7 @@ module.exports = {
   devtool: DEV ? 'cheap-module-source-map' : 'source-map',
   entry: './src/client/index.js',
   output: {
-    path: 'build/client',
+    path: __dirname + '/build/client',
     filename: 'bundle.js',
     publicPath: '/',
   },
