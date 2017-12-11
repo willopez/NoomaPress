@@ -35,11 +35,7 @@ export default class NavBar extends Component {
         >
           <Nav navbar className="nav-masthead">
             <NavbarLink onClick={this.toggleNavbar} title="HOME" href="/" />
-            <NavbarLink
-              onClick={this.toggleNavbar}
-              title="ABOUT"
-              href="/about"
-            />
+            <NavbarLink onClick={this.toggleNavbar} title="NEW" href="/about" />
           </Nav>
         </Collapse>
       </Navbar>

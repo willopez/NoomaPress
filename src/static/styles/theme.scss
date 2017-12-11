@@ -1,27 +1,24 @@
 /* START Gutenberg styles and overrides START*/
 .alignright {
   display: inline;
-  float: right;
   margin-left: 1.5em;
 }
 
 .alignleft {
   display: inline;
-  float: left;
   margin-left: 1.5em;
 }
 
 .aligncenter {
+  text-align: center;
   clear: both;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .wp-block-cover-image {
   @extend .full-width;
-  height: 200px;
-  margin-bottom: 1rem;
+  height: 434px;
+  margin-bottom: 2rem;
 }
 /* END Gutenberg style overrides END */
 
@@ -34,7 +31,26 @@ body {
 
 body {
   color: #40464d;
-  text-align: center;
+  font-family: BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  color: rgba(0,0,0,.84);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 /* Custom default button */
@@ -99,16 +115,15 @@ ul.navbar-nav li.active a {
 }
 
 .main-content {
-  padding: 0 3rem;
+  max-width: 740px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
 }
 
 /*
  * Header
  */
-
-.masthead {
-  margin-bottom: 2rem;
-}
 
 .masthead-brand {
   margin-bottom: 0;
@@ -122,6 +137,12 @@ button.navbar-toggler {
   border: none;
   outline: none !important;
 }
+
+ul.navbar-nav {
+  font-size: 16px;
+  text-align: center;
+}
+
 
 ul.navbar-nav li {
   margin-top: 20px;
@@ -180,6 +201,7 @@ ul.navbar-nav li {
  */
 
 .mastfoot {
+  text-align: center;
 }
 
 /*
@@ -187,22 +209,6 @@ ul.navbar-nav li {
  */
 
 @media (min-width: 40em) {
-  /* Pull out the header and footer */
-  .masthead {
-    // position: fixed;
-    // top: 0;
-  }
-
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-
-  /* Start vertical centering */
-  .site-wrapper-inner {
-    // vertical-align: middle;
-  }
-
   /* Handle the widths */
   .masthead,
   .mastfoot,
@@ -217,14 +223,5 @@ ul.navbar-nav li {
   .mastfoot,
   .cover-container {
     width: 65rem;
-  }
-
-  .full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
   }
 }
