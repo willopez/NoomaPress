@@ -1,29 +1,29 @@
-import HomePage from '~/pages/HomePage';
-import AboutPage from '~/pages/AboutPage';
-import DynamicPage from '~/pages/DynamicPage';
-import NotFoundPage from '~/pages/NotFoundPage';
+import Home from '~/pages/home';
+import About from '~/pages/about';
+import Dynamic from '~/pages/dynamic';
+import NotFound from '~/pages/not-found';
 
 const routes = [
   {
     path: '/',
     name: 'home',
     exact: true,
-    component: HomePage,
+    component: Home,
   },
   {
     path: '/about',
     exact: true,
-    component: AboutPage,
+    component: About,
   },
   {
     path: '/:slug',
     exact: true,
-    component: DynamicPage,
+    component: Dynamic,
   },
   {
     path: '*',
     name: 'notfound',
-    component: NotFoundPage,
+    component: NotFound,
   },
 ];
 
