@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
+import MenuItems from '~/components/menu-items';
 import NavbarLink from '~/components/navbar-link';
 
 export default class NavBar extends Component {
@@ -34,8 +35,7 @@ export default class NavBar extends Component {
           navbar
         >
           <Nav navbar className="nav-masthead">
-            <NavbarLink onClick={this.toggleNavbar} title="HOME" href="/" />
-            <NavbarLink onClick={this.toggleNavbar} title="NEW" href="/about" />
+            <MenuItems onClick={this.toggleNavbar} />
           </Nav>
         </Collapse>
       </Navbar>
