@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
 import MenuItems from '~/components/menu-items';
-import NavbarLink from '~/components/navbar-link';
+import Menu from 'react-burger-menu/lib/menus/slide';
 
 export default class NavBar extends Component {
   state = {
@@ -9,17 +9,13 @@ export default class NavBar extends Component {
   };
 
   toggleNavbar = () => {
-    var w = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
+    this.setState({
+      isOpen: !this.isMenuOpen,
+    });
+  };
 
-    // Only trigger toggle on small devices
-    if (w <= 768) {
-      this.setState({
-        isOpen: !this.state.isOpen,
-      });
-    }
+  isMenuOpen = state => {
+    return state.isOpen;
   };
 
   render() {
@@ -28,14 +24,19 @@ export default class NavBar extends Component {
         <NavbarBrand className="masthead-brand" href="/">
           <img src="/static/images/logo.png" alt="NoomaPress" />
         </NavbarBrand>
-        <NavbarToggler right onClick={this.toggleNavbar} />
-        <Collapse
-          className="justify-content-end"
+        <Menu
+          right
+          noOverlay
           isOpen={this.state.isOpen}
-          navbar
+          onStateChange={this.isMenuOpen}
+          customBurgerIcon={<img src="/static/images/mobile-menu-icon.svg" />}
+          className="mobile-menu"
         >
+          <MenuItems onClick={this.toggleNavbar} />
+        </Menu>
+        <Collapse className="justify-content-end" navbar>
           <Nav navbar className="nav-masthead">
-            <MenuItems onClick={this.toggleNavbar} />
+            <MenuItems />
           </Nav>
         </Collapse>
       </Navbar>

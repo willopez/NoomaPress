@@ -18,6 +18,8 @@ const MenuItems = ({ onClick }) => {
   );
 };
 
-MenuItems.propTypes = {};
+MenuItems.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default MenuItems;
