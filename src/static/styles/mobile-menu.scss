@@ -16,15 +16,33 @@
   background: #373a47;
 }
 
-.bm-item-list a {
-  padding: 0.8em;
+.bm-item-list li {
+  padding-bottom: 0.3em;
 }
 
 /* Menu links */
 .bm-menu a {
-    color: #b8b7ad;
-    font-size: 17px;
-    font-weight: 700;
+    color:rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1em;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    padding-bottom: 3px;
+}
+
+.bm-menu a {
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.7);
+    display: inline;
+    padding-bottom: 3px;
+  }
+
 }
 
 /* Position and sizing of clickable cross button */

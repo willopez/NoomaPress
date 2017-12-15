@@ -6,14 +6,14 @@ import NotFound from '~/pages/not-found';
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     menu: true,
     exact: true,
     component: Home,
   },
   {
     path: '/about',
-    name: 'About',
+    name: 'about',
     menu: true,
     exact: true,
     component: About,

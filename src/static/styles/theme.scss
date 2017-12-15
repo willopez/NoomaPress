@@ -71,8 +71,16 @@ li {
 }
 
 ul.navbar-nav li a {
-    color: #40464d;
+    color:rgba(0,0,0,.7);
     text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1em;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+
 }
 
 ul.navbar-nav li a {
@@ -140,13 +148,15 @@ button.navbar-toggler {
 }
 
 ul.navbar-nav {
-  font-size: 16px;
   text-align: center;
 }
 
 
 ul.navbar-nav li {
   margin-top: 20px;
+  margin: 0 0.5em;
+  padding: .618em 0;
+  vertical-align: middle;
 }
 
 .nav-masthead .nav-link {
