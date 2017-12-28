@@ -5,7 +5,7 @@ const wp = new WPAPI({ endpoint: config.get('wpapi_uri') });
 const resolvers = {
   Query: {
     page: async (_, args) => {
-      let response = null;
+      let response = [];
 
       try {
         response = await wp.pages().slug(args.slug);
@@ -18,7 +18,7 @@ const resolvers = {
         console.log('API ERROR: ', error);
       }
 
-      if (!response) {
+      if (!response.length) {
         return {};
       }
 
