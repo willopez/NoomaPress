@@ -40,8 +40,6 @@ body {
   margin-bottom: 0;
 }
 
-
-
 /* Navigation */
 .navbar {
   padding: 1.5rem 1rem;
@@ -119,6 +117,7 @@ ul.navbar-nav li {
   margin-left: 1rem;
 }
 
+
 /* Buttons */
 .btn-secondary {
   &,
@@ -134,22 +133,11 @@ ul.navbar-nav li {
 /* Lists */
 li {
   list-style: none;
-  padding-left: 10px;
+  // padding-left: 10px;
 }
 
-/* Cover */
-
-// .cover {
-//   padding: 0 1.5rem;
-// }
-
-// .cover .btn-lg {
-//   padding: 0.75rem 1.25rem;
-//   font-weight: bold;
-// }
-
 /* Footer */
-.mastfoot {
+.footer {
   margin-top: 3em;
   text-align: center;
   text-transform: uppercase;
@@ -157,11 +145,6 @@ li {
   color: #fff;
   padding: 60px 0;
   font-weight: 500;
-}
-
-.social-media-link {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 footer p {
@@ -174,10 +157,27 @@ footer ul {
   padding-left: 0;
 }
 
+.footer ul li {
+  display: inline-block;
+}
 
-// .mastfoot {
-//   text-align: center;
-// }
+.footer ul li .fa {
+  color: #fff;
+  margin: 0 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #00a0d2;
+    border: 2px solid #00a0d2;
+    transition: all 0.5s ease;
+  }
+}
 
 /* Media queries */
 @include media-breakpoint-up(md) {
@@ -198,7 +198,6 @@ footer ul {
 }
 
 /* Utils */
-
 .full-width {
   width: 100vw;
   position: relative;

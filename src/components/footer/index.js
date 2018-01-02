@@ -3,23 +3,23 @@ import React from 'react';
 const date = new Date();
 
 export default () => (
-  <footer className="mastfoot">
+  <footer className="footer">
     <div className="container">
       <p>Follow Us on Social Media</p>
       <ul>
-        <li className="social-media-link">
+        <li>
           <a href="#" target="_blank">
-            <img alt="Facebook" src="static/images/icons/fb.png" />
+            <i className="fa fa-facebook" />
           </a>
         </li>
-        <li className="social-media-link">
+        <li>
           <a href="#" target="_blank">
-            <img alt="Instagram" src="static/images/icons/ig.png" />
+            <i className="fa fa-instagram" />
           </a>
         </li>
-        <li className="social-media-link">
+        <li>
           <a href="#" target="_blank">
-            <img alt="Twitter" src="static/images/icons/twitter.png" />
+            <i className="fa fa-twitter" />
           </a>
         </li>
       </ul>
