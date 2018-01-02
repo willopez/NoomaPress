@@ -16,7 +16,7 @@
     "precommit": "lint-staged",
     "gulp": "./node_modules/gulp/bin/gulp.js",
     "postcss": "postcss --config postcss.config.js --replace build/client/css/app.css",
-    "css:dev": "node-sass --output-style expanded --precision 6 src/style/app.scss build/client/css/app.css && npm run postcss",
+    "css:dev": "node-sass --output-style expanded --precision 6 src/styles/app.scss build/client/css/app.css && npm run postcss",
     "css:prod": "npm run gulp && npm run postcss"
   },
   "lint-staged": {
