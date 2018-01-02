@@ -23,9 +23,9 @@ function logPageView() {
 }
 
 const Layout = () => (
-  <div className="site-wrapper-inner">
+  <React.Fragment>
     <Route path="/" component={logPageView} />
-    <div className="cover-container">
+    <div className="container">
       <Helmet
         htmlAttributes={{ lang: 'en', amp: undefined }}
         titleTemplate="%s | NoomaPress"
@@ -41,14 +41,12 @@ const Layout = () => (
       <Header />
       <main role="main" className="main-content">
         <Switch>
-          {routes.map(route => (
-            <Route key={`route-${route.name}`} {...route} />
-          ))}
+          {routes.map((route, index) => <Route key={index} {...route} />)}
         </Switch>
       </main>
-      <Footer />
     </div>
-  </div>
+    <Footer />
+  </React.Fragment>
 );
 
 export default Layout;

@@ -1,0 +1,39 @@
+.wp-block-cover-image {
+  @extend .full-width;
+  height: 157px;
+  margin-bottom: 2rem;
+}
+
+.wp-block-video {
+  @extend .full-width;
+  height: 157px;
+  object-fit: fill;
+  margin-bottom: 2rem;
+}
+
+.wp-page-header, h2 {
+  color: rgba(0, 0, 0, .84);
+  font-size: 2em;
+  line-height: 70px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Miscellaneous Gutenberg styles*/
+.alignright {
+  display: inline;
+  margin-left: 1.5em;
+}
+
+.alignleft {
+  display: inline;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  text-align: center;
+  clear: both;
+  display: block;
+}

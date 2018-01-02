@@ -9,7 +9,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 
 import { errorLink, queryOrMutationLink } from '~/shared/links';
-import '~/static/styles/app.scss';
+import '~/static/styles/index.scss';
 import Layout from '~/layouts/Layout';
 
 const client = new ApolloClient({
@@ -25,7 +25,7 @@ hydrate(
       <Layout />
     </BrowserRouter>
   </ApolloProvider>,
-  document.getElementById('content')
+  document.getElementById('app')
 );
 
 if (module.hot) {

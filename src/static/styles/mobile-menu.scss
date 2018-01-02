@@ -1,10 +1,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: absolute;
   width: 36px;
   height: 30px;
-  right: 36px;
-  top: 36px;
+  top: 32px;
+  left: 90%;
 }
 
 .bm-menu-wrap {
@@ -38,7 +38,7 @@
   &:focus,
   &:hover {
     text-decoration: none;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.7);
+    border-bottom: solid 1px #00a0d2;
     display: inline;
     padding-bottom: 3px;
   }
@@ -58,7 +58,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: rgba(0, 0, 0, 0.90);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -80,12 +80,17 @@
 }
 
 /* Media queries */
-.bm-burger-button {
-  display: block;
-}
-
  @include media-breakpoint-up(md) {
   .bm-burger-button {
     display: none;
+  }
+}
+
+@media (max-width: 993px) {
+  .nav-masthead {
+    display: none;
+  }
+  .bm-burger-button {
+    display: block;
   }
 }

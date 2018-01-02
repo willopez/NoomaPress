@@ -2,7 +2,7 @@
 
 import React from 'react';
 import StylesheetTag from '~/components/stylesheet-tag';
-import appSCSS from '~/static/styles/app.scss';
+import appSCSS from '~/static/styles/index.scss';
 import gutenberg from '~/static/styles/gutenberg.css';
 import AppIcons from '~/components/app-icons';
 
@@ -18,7 +18,7 @@ const HTMLDocument = ({ content, helmet, client: { cache } }) => {
         <AppIcons />
       </head>
       <body>
-        <div id="content" dangerouslySetInnerHTML={{ __html: content }} />
+        <div id="app" dangerouslySetInnerHTML={{ __html: content }} />
         <script
           charSet="UTF-8"
           dangerouslySetInnerHTML={{

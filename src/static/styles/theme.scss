@@ -1,27 +1,3 @@
-/* START Gutenberg styles and overrides START*/
-.alignright {
-  display: inline;
-  margin-left: 1.5em;
-}
-
-.alignleft {
-  display: inline;
-  margin-left: 1.5em;
-}
-
-.aligncenter {
-  text-align: center;
-  clear: both;
-  display: block;
-}
-
-.wp-block-cover-image {
-  @extend .full-width;
-  height: 434px;
-  margin-bottom: 2rem;
-}
-/* END Gutenberg style overrides END */
-
 /* Main structure */
 html,
 body {
@@ -44,30 +20,31 @@ body {
   line-height: 1.4;
 }
 
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+/* Layout */
+#content {
+  display: table;
+  width: 100%;
+  height: 100%;/* For Firefox */
+  min-height: 100%;
 }
 
-/* Custom default button */
-.btn-secondary {
-  &,
-  &:hover,
-  &:focus {
-    color: #333;
-    text-shadow: none; /* Prevent inheritance from `body` */
-    background-color: #fff;
-    border: 0.05rem solid #fff;
-  }
+.main-content {
+  max-width: 740px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
 }
 
-li {
-  list-style: none;
-  padding-left: 10px;
+/* Header */
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+
+
+/* Navigation */
+.navbar {
+  padding: 1.5rem 1rem;
 }
 
 ul.navbar-nav li a {
@@ -99,48 +76,6 @@ ul.navbar-nav li.active a {
   display: inline;
   padding-bottom: 3px;
 }
-
-/* Styles for table-esque vertical and horizontal centering */
-#content {
-  display: table;
-  width: 100%;
-  height: 100%;/* For Firefox */
-  min-height: 100%;
-}
-
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-.main-content {
-  max-width: 740px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-}
-
-/*
- * Header
- */
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-/**
- * Navigation
- */
 
 button.navbar-toggler {
   border: none;
@@ -184,6 +119,74 @@ ul.navbar-nav li {
   margin-left: 1rem;
 }
 
+/* Buttons */
+.btn-secondary {
+  &,
+  &:hover,
+  &:focus {
+    color: #333;
+    text-shadow: none; /* Prevent inheritance from `body` */
+    background-color: #fff;
+    border: 0.05rem solid #fff;
+  }
+}
+
+/* Lists */
+li {
+  list-style: none;
+  padding-left: 10px;
+}
+
+/* Cover */
+
+// .cover {
+//   padding: 0 1.5rem;
+// }
+
+// .cover .btn-lg {
+//   padding: 0.75rem 1.25rem;
+//   font-weight: bold;
+// }
+
+/* Footer */
+.mastfoot {
+  margin-top: 3em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+  font-weight: 500;
+}
+
+.social-media-link {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+
+// .mastfoot {
+//   text-align: center;
+// }
+
+/* Media queries */
+@include media-breakpoint-up(md) {
+  .wp-block-cover-image,
+  .wp-block-video {
+    height: 450px;
+  }
+}
+
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;
@@ -194,45 +197,13 @@ ul.navbar-nav li {
   }
 }
 
-/*
- * Cover
- */
+/* Utils */
 
-.cover {
-  padding: 0 1.5rem;
-}
-
-.cover .btn-lg {
-  padding: 0.75rem 1.25rem;
-  font-weight: bold;
-}
-
-/*
- * Footer
- */
-
-.mastfoot {
-  text-align: center;
-}
-
-/*
- * Media queries
- */
-
-@media (min-width: 40em) {
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%;
-  }
-}
-
-/* Large devices */
-@media (min-width: 62em) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 65rem;
-  }
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
