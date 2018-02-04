@@ -20,7 +20,7 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <Navbar toggleable className="navbar navbar-light navbar-expand-md">
+      <Navbar expand className="navbar navbar-light navbar-expand-md">
         <NavbarBrand className="masthead-brand" href="/">
           <img src="/static/images/logo.png" alt="NoomaPress" />
         </NavbarBrand>
